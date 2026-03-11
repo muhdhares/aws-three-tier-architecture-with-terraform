@@ -175,7 +175,8 @@ Used for:
 * Backend EC2 instances
 * Internal ALB
 * Amazon RDS
-###Nat Gateway
+
+### Nat Gateway
 
 Used for:
 
