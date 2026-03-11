@@ -1,5 +1,33 @@
 # Three-Tier AWS Architecture
 
+## Table of Contents
+
+- [Project Overview](#project-overview)
+- [Technologies Used](#technologies-used)
+- [Architecture Overview](#architecture-overview)
+- [Architecture Flow](#architecture-flow)
+  - [Client → Internet ALB](#1-client--internet-alb)
+  - [Internet ALB → Frontend ASG](#2-internet-alb--frontend-asg)
+  - [Frontend → Internal ALB](#3-frontend--internal-alb)
+  - [Internal ALB → Backend ASG](#4-internal-alb--backend-asg)
+  - [Backend → RDS Database](#5-backend--rds-database)
+- [Core Infrastructure Components](#core-infrastructure-components)
+  - [VPC and Networking](#vpc-and-networking)
+  - [Application Load Balancers](#application-load-balancers)
+  - [Auto Scaling Groups](#auto-scaling-groups)
+  - [Amazon RDS](#amazon-rds)
+  - [Security Groups](#security-groups)
+  - [S3 (ALB Access Logs)](#s3-alb-access-logs)
+- [Repository Structure](#repository-structure)
+- [Deployment Guide](#deployment-guide)
+  - [Prerequisites](#prerequisites)
+- [Build and Push Docker Images](#build-and-push-docker-images)
+- [Terraform Deployment](#terraform-deployment)
+- [User Data Configuration](#user-data-configuration)
+- [Operational Notes and Troubleshooting](#operational-notes-and-troubleshooting)
+- [Future Improvements](#future-improvements)
+- [Author](#author)
+
 ## Project Overview
 
 This project demonstrates a production-style **Three-Tier Web Application Architecture on AWS** deployed using **Terraform Infrastructure as Code (IaC)**.
