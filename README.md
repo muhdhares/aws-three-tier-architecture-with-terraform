@@ -153,7 +153,21 @@ Features:
 * Accessible only from backend security group
 
 ---
+## Security Group Rules
 
+The following table describes the allowed traffic flow between different layers of the architecture.
+
+| Source | Destination | Port | Purpose |
+|------|------|------|------|
+| Internet | Internet ALB SG | 80 | Allow HTTP traffic from users |
+| Internet ALB SG | Frontend SG | 80 | Forward web requests to frontend instances |
+| Frontend SG | Internal Backend ALB SG | 3000 | Frontend sends API requests to backend load balancer |
+| Internal Backend ALB SG | Backend SG | 3000 | Route requests to Node.js backend service |
+| Backend SG | RDS SG | 3306 | Backend communicates with MySQL database |
+| Bastion SG | Frontend SG | 22 | SSH access to frontend instances |
+| Bastion SG | Backend SG | 22 | SSH access to backend instances |
+
+---
 # Core Infrastructure Components
 
 ## VPC and Networking
