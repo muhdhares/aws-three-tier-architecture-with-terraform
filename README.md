@@ -175,6 +175,11 @@ Used for:
 * Backend EC2 instances
 * Internal ALB
 * Amazon RDS
+###Nat Gateway
+
+Used for:
+
+* SSH access to private EC2 and to connect private resources with internet
 
 This setup ensures backend systems are not directly reachable from the internet.
 
