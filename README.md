@@ -11,6 +11,7 @@
   - [Frontend → Internal ALB](#3-frontend--internal-alb)
   - [Internal ALB → Backend ASG](#4-internal-alb--backend-asg)
   - [Backend → RDS Database](#5-backend--rds-database)
+- [Security Groups](#security-group-rules)
 - [Core Infrastructure Components](#core-infrastructure-components)
   - [VPC and Networking](#vpc-and-networking)
   - [Application Load Balancers](#application-load-balancers)
@@ -153,7 +154,7 @@ Features:
 * Accessible only from backend security group
 
 ---
-## Security Group Rules
+# Security Group Rules
 
 The following table describes the allowed traffic flow between different layers of the architecture.
 
