@@ -410,6 +410,53 @@ docker push <account_id>.dkr.ecr.<region>.amazonaws.com/backend:latest
 
 ---
 
+# Example configuration:
+
+```hcl
+#terraform.tfvars
+aws_region  = "ap-south-1"
+
+name_prefix = "3-tier-infra"
+
+tags = {
+  Project     = "Three-Tier-Infra"
+  Environment = "Development"
+  CreatedBy   = "Mohammad Haris with Terraform"
+}
+
+vpc_cidr             = "10.0.0.0/16"
+public_subnet_block  = ["10.0.0.0/24", "10.0.4.0/24"]
+
+private_subnet_block = [
+"10.0.8.0/24",
+"10.0.12.0/24",
+"10.0.16.0/24",
+"10.0.20.0/24",
+"10.0.24.0/24",
+"10.0.28.0/24"
+]
+
+instance_type = "t3.micro"
+
+ec2_role_name = "enter-ec2-role-name"
+
+name_of_secret = "name-of-secret-goes-here"
+
+db_identifier = "db-identifier-goes-here"
+
+db_username = "username_for_db"
+
+db_name = "database_name"
+
+password_length = 20
+
+bucket_name = "bucket-name-for-load-balancer-access-logs-goes-here"
+
+environment = "dev"
+
+owner = "Mohammad Haris"
+```
+
 # Terraform Deployment
 
 Run Terraform from the **src directory**.
@@ -501,5 +548,3 @@ Possible enhancements to this project:
 # Author
 
 Mohammad Haris
-
-Cloud / DevOps Engineer
